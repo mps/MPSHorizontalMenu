@@ -13,56 +13,48 @@
 
 @implementation MPSHorizontalMenu
 
-
--(void) baseInit_ {
-  
-  self.backgroundColor = [UIColor lightGrayColor];
-  self.itemNormalBackgroundColor = [UIColor clearColor];
-  self.itemNormalForegroundColor = [UIColor whiteColor];
-  self.itemSelectedBackgroundColor = [UIColor blackColor];
-  self.itemSelectedForegroundColor = [UIColor whiteColor];
-  self.cornerRadius = 2.0f;
-
-  self.bounces = YES;
-  self.scrollEnabled = YES;
-  self.alwaysBounceHorizontal = YES;
-  self.alwaysBounceVertical = NO;
-  self.showsHorizontalScrollIndicator = NO;
-  self.showsVerticalScrollIndicator = NO;
+- (void)baseInit {
+	
+	self.backgroundColor = [UIColor lightGrayColor];
+	self.itemNormalBackgroundColor = [UIColor clearColor];
+	self.itemNormalForegroundColor = [UIColor whiteColor];
+	self.itemSelectedBackgroundColor = [UIColor blackColor];
+	self.itemSelectedForegroundColor = [UIColor whiteColor];
+	self.cornerRadius = 2.0f;
+	
+	self.bounces = YES;
+	self.scrollEnabled = YES;
+	self.alwaysBounceHorizontal = YES;
+	self.alwaysBounceVertical = NO;
+	self.showsHorizontalScrollIndicator = NO;
+	self.showsVerticalScrollIndicator = NO;
 	self.backgroundColor = [UIColor blackColor];
-  
-  [self reloadData];
+	
+	[self reloadData];
 }
 
--(id) initWithCoder:(NSCoder *)aDecoder {
-  
-  if(self = [super initWithCoder:aDecoder]) {
-    
-    [self baseInit_];
-  }
-  
-  return self;
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	if (self = [super initWithCoder:aDecoder]) {
+		[self baseInit];
+	}
+	return self;
 }
 
--(id) initWithFrame:(CGRect)frame {
-  
-  if(self = [super initWithFrame:frame]) {
-    
-    [self baseInit_];
-  }
-  
-  return self;
+- (id)initWithFrame:(CGRect)frame {
+	if (self = [super initWithFrame:frame]) {
+		[self baseInit];
+	}
+	return self;
 }
 
 - (void)awakeFromNib {
-	
-    [self baseInit_];
+    [self baseInit];
 }
 
 - (void)reloadData {
 	NSArray *viewsToRemove = [self subviews];
-  [viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
-  
+	[viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+	
     self.itemCount = [self.dataSource numberOfItemsForMenu:self];
 	
     UIFont *buttonFont = [UIFont boldSystemFontOfSize:15];
