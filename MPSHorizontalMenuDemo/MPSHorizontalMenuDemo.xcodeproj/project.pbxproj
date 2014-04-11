@@ -21,8 +21,6 @@
 		341F716A18F8087C0055331F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341F714C18F8087C0055331F /* UIKit.framework */; };
 		341F717218F8087C0055331F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 341F717018F8087C0055331F /* InfoPlist.strings */; };
 		341F717418F8087C0055331F /* MPSHorizontalMenuDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 341F717318F8087C0055331F /* MPSHorizontalMenuDemoTests.m */; };
-		341F718418F808980055331F /* ButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 341F717E18F808980055331F /* ButtonSelected.png */; };
-		341F718518F808980055331F /* ButtonSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 341F717F18F808980055331F /* ButtonSelected@2x.png */; };
 		341F718618F808980055331F /* MPSHorizontalMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 341F718118F808980055331F /* MPSHorizontalMenu.m */; };
 		341F718718F808980055331F /* MPSHorizontalMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 341F718318F808980055331F /* MPSHorizontalMenuButton.m */; };
 /* End PBXBuildFile section */
@@ -57,8 +55,6 @@
 		341F716F18F8087C0055331F /* MPSHorizontalMenuDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MPSHorizontalMenuDemoTests-Info.plist"; sourceTree = "<group>"; };
 		341F717118F8087C0055331F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		341F717318F8087C0055331F /* MPSHorizontalMenuDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSHorizontalMenuDemoTests.m; sourceTree = "<group>"; };
-		341F717E18F808980055331F /* ButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonSelected.png; sourceTree = "<group>"; };
-		341F717F18F808980055331F /* ButtonSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonSelected@2x.png"; sourceTree = "<group>"; };
 		341F718018F808980055331F /* MPSHorizontalMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSHorizontalMenu.h; sourceTree = "<group>"; };
 		341F718118F808980055331F /* MPSHorizontalMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSHorizontalMenu.m; sourceTree = "<group>"; };
 		341F718218F808980055331F /* MPSHorizontalMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSHorizontalMenuButton.h; sourceTree = "<group>"; };
@@ -166,8 +162,6 @@
 		341F717D18F808980055331F /* MPSHorizontalMenu */ = {
 			isa = PBXGroup;
 			children = (
-				341F717E18F808980055331F /* ButtonSelected.png */,
-				341F717F18F808980055331F /* ButtonSelected@2x.png */,
 				341F718018F808980055331F /* MPSHorizontalMenu.h */,
 				341F718118F808980055331F /* MPSHorizontalMenu.m */,
 				341F718218F808980055331F /* MPSHorizontalMenuButton.h */,
@@ -255,8 +249,6 @@
 			files = (
 				341F716118F8087C0055331F /* Images.xcassets in Resources */,
 				341F715318F8087C0055331F /* InfoPlist.strings in Resources */,
-				341F718418F808980055331F /* ButtonSelected.png in Resources */,
-				341F718518F808980055331F /* ButtonSelected@2x.png in Resources */,
 				341F715C18F8087C0055331F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +477,7 @@
 				341F717918F8087C0055331F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		341F717A18F8087C0055331F /* Build configuration list for PBXNativeTarget "MPSHorizontalMenuDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +486,7 @@
 				341F717C18F8087C0055331F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

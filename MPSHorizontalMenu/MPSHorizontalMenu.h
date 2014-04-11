@@ -36,8 +36,8 @@
 @interface MPSHorizontalMenu : UIScrollView
 
 @property (nonatomic, strong) NSMutableArray *titles;
-@property (nonatomic, assign) IBOutlet id <MPSHorizontalMenuDelegate> itemSelectedDelegate;
-@property (nonatomic, strong) IBOutlet id <MPSHorizontalMenuDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet id <MPSHorizontalMenuDelegate> itemSelectedDelegate;
+@property (nonatomic, weak) IBOutlet id <MPSHorizontalMenuDataSource> dataSource;
 @property (nonatomic, strong) UIImage *selectedImage;
 @property (nonatomic, assign) int itemCount;
 @property (nonatomic, strong) UIColor *itemNormalBackgroundColor;
