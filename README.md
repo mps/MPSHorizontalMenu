@@ -11,6 +11,8 @@ If you're using CocoaPods, simply add the following line to your Podfile:
 pod 'MPSHorizontalMenu'
 ```
 
+If not then you will need to clone this project and add the files in the MPSHorizontalMenu folder to your project.  I suggest dropping this in a Vendor folder.  If you are git savvy then of course you can use a git submodule, but if you are that savvy then I doubt you read this sentence. ;)
+
 ## Example
 
 ![Screenshot](https://github.com/mps/MPSHorizontalMenu/blob/master/images/example.gif?raw=true)
