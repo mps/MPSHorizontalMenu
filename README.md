@@ -25,6 +25,8 @@ For more an example, check out the example project included in this repository a
 
 ```objc
 // Declare this somewhere in your interface
+#import "MPSHorizontalMenu.h"
+
 @property (nonatomic, strong) MPSHorizontalMenu *horizontalMenu;
 @property (nonatomic, strong) NSMutableArray *menuItems;
 
