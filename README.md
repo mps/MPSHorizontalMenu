@@ -5,7 +5,7 @@ A simple yet customizable Horizontal Menu for when you do not want to muck with 
 
 ## Example
 
-![Screenshot](https://raw.github.com/mps/MPSHorizontalMenu/master/images/example.gif)
+![Screenshot](https://github.com/mps/MPSHorizontalMenu/blob/master/images/example.gif?raw=true)
 
 ## Usage
 
