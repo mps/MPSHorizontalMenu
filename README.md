@@ -3,6 +3,14 @@ MPSHorizontalMenu
 
 A simple yet customizable Horizontal Menu for when you do not want to muck with UICollectionViews.
 
+## Installation
+
+If you're using CocoaPods, simply add the following line to your Podfile:
+
+``` ruby
+pod 'MPSHorizontalMenu'
+```
+
 ## Example
 
 ![Screenshot](https://github.com/mps/MPSHorizontalMenu/blob/master/images/example.gif?raw=true)
