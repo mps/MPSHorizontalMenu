@@ -13,8 +13,27 @@
 
 @implementation MPSHorizontalMenu
 
-- (void)baseInit {
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	if (self = [super initWithCoder:aDecoder]) {
+		[self baseInit];
+	}
+	return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+	if (self = [super initWithFrame:frame]) {
+		[self baseInit];
+	}
+	return self;
+}
+
+- (void)awakeFromNib {
+	[super awakeFromNib];
 	
+    [self baseInit];
+}
+
+- (void)baseInit {
 	self.backgroundColor = [UIColor lightGrayColor];
 	self.itemNormalBackgroundColor = [UIColor clearColor];
 	self.itemNormalForegroundColor = [UIColor whiteColor];
@@ -31,24 +50,6 @@
 	self.backgroundColor = [UIColor blackColor];
 	
 	[self reloadData];
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-	if (self = [super initWithCoder:aDecoder]) {
-		[self baseInit];
-	}
-	return self;
-}
-
-- (id)initWithFrame:(CGRect)frame {
-	if (self = [super initWithFrame:frame]) {
-		[self baseInit];
-	}
-	return self;
-}
-
-- (void)awakeFromNib {
-    [self baseInit];
 }
 
 - (void)reloadData {
