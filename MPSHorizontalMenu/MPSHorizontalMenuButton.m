@@ -44,11 +44,6 @@
 	self.selected ? [self setSelectedStyle] : [self setDefaultStyle];
 }
 
-- (void)setFrame:(CGRect)frame {
-	[super setFrame:frame];
-	
-}
-
 - (void)setSelected:(BOOL)selected {
 	[super setSelected:selected];
 	
@@ -68,7 +63,9 @@
 	
 	self.titleLabel.font = [UIFont fontWithName:self.titleLabel.font.familyName size:14.0f];
 	
-	self.titleLabel.textColor = self.normalForegroundColor;
+	[self setTitleColor:self.normalForegroundColor forState:UIControlStateNormal];
+	
+	[self setTitleColor:self.normalForegroundColor forState:UIControlStateHighlighted];
 	
 	self.bottomBorder.backgroundColor = self.normalBottomBorderColor;
 }
