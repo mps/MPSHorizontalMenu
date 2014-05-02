@@ -71,9 +71,12 @@
 												  attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f]}
 													 context:nil];
         
-        CGFloat buttonWidth = buttonWidthRect.size.width;
+        CGFloat buttonWidth = buttonWidthRect.size.width + buttonPadding;
+		if (buttonWidth < 106.0f) {
+			buttonWidth = 106.0f;
+		}
         
-        MPSHorizontalMenuButton *customButton = [[MPSHorizontalMenuButton alloc] initWithFrame:CGRectMake(xPos, 0, buttonWidth + buttonPadding, self.frame.size.height - 1.0f)];
+        MPSHorizontalMenuButton *customButton = [[MPSHorizontalMenuButton alloc] initWithFrame:CGRectMake(xPos, 0, buttonWidth, self.frame.size.height - 1.0f)];
 		
         [customButton setTitle:title forState:UIControlStateNormal];
         [customButton setTitle:title forState:UIControlStateSelected];
@@ -95,7 +98,6 @@
         customButton.tag = tag++;
         [customButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
         xPos += buttonWidth;
-        xPos += buttonPadding;
 		
 		if (i + 1 < self.itemCount) {
 			xPos += 1.0f; // spacing
