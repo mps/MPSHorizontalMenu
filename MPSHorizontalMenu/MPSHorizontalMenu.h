@@ -41,8 +41,10 @@
 @property (nonatomic, strong) UIImage *selectedImage;
 @property (nonatomic, assign) int itemCount;
 @property (nonatomic, strong) UIColor *itemNormalBackgroundColor;
+@property (nonatomic, strong) UIColor *itemNormalBottomBorderColor;
 @property (nonatomic, strong) UIColor *itemNormalForegroundColor;
 @property (nonatomic, strong) UIColor *itemSelectedBackgroundColor;
+@property (nonatomic, strong) UIColor *itemSelectedBottomBorderColor;
 @property (nonatomic, strong) UIColor *itemSelectedForegroundColor;
 @property (nonatomic) CGFloat cornerRadius;
 

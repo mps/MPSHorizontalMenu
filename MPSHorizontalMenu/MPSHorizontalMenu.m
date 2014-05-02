@@ -9,7 +9,7 @@
 #import "MPSHorizontalMenu.h"
 
 #define kButtonBaseTag 10000
-#define kLeftOffset 10
+#define kLeftOffset 0
 
 @implementation MPSHorizontalMenu
 
@@ -39,7 +39,6 @@
 	self.itemNormalForegroundColor = [UIColor whiteColor];
 	self.itemSelectedBackgroundColor = [UIColor blackColor];
 	self.itemSelectedForegroundColor = [UIColor whiteColor];
-	self.cornerRadius = 2.0f;
 	
 	self.bounces = YES;
 	self.scrollEnabled = YES;
@@ -62,20 +61,32 @@
     int buttonPadding = 20;
     
     int tag = kButtonBaseTag;
-    int xPos = kLeftOffset;
+    CGFloat xPos = kLeftOffset;
 	
     for(int i = 0 ; i < self.itemCount; i ++) {
         NSString *title = [self.dataSource horizontalMenu:self titleForItemAtIndex:i];
-        MPSHorizontalMenuButton *customButton = [MPSHorizontalMenuButton buttonWithType:UIButtonTypeCustom];
+		
+		CGRect buttonWidthRect = [title boundingRectWithSize:CGSizeMake(150, 28)
+													 options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+												  attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f]}
+													 context:nil];
+        
+        CGFloat buttonWidth = buttonWidthRect.size.width;
+        
+        MPSHorizontalMenuButton *customButton = [[MPSHorizontalMenuButton alloc] initWithFrame:CGRectMake(xPos, 0, buttonWidth + buttonPadding, self.frame.size.height - 1.0f)];
+		
         [customButton setTitle:title forState:UIControlStateNormal];
+        [customButton setTitle:title forState:UIControlStateSelected];
         customButton.titleLabel.font = buttonFont;
 		
 		if (self.selectedImage) {
 			[customButton setBackgroundImage:self.selectedImage forState:UIControlStateSelected];
 		} else {
 			[customButton setNormalBackgroundColor:self.itemNormalBackgroundColor];
+			[customButton setNormalBottomBorderColor:self.itemNormalBottomBorderColor];
 			[customButton setNormalForegroundColor:self.itemNormalForegroundColor];
 			[customButton setSelectedBackgroundColor:self.itemSelectedBackgroundColor];
+			[customButton setSelectedBottomBorderColor:self.itemSelectedBottomBorderColor];
 			[customButton setSelectedForegroundColor:self.itemSelectedForegroundColor];
 		}
 		
@@ -83,18 +94,14 @@
         
         customButton.tag = tag++;
         [customButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-		
-		CGRect buttonWidthRect = [title boundingRectWithSize:CGSizeMake(150, 28)
-													 options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
-												  attributes:@{NSFontAttributeName:customButton.titleLabel.font}
-													 context:nil];
-        
-        CGFloat buttonWidth = buttonWidthRect.size.width;
-        
-        customButton.frame = CGRectMake(xPos, 7, buttonWidth + buttonPadding, 28);
         xPos += buttonWidth;
         xPos += buttonPadding;
-        [self addSubview:customButton];
+		
+		if (i + 1 < self.itemCount) {
+			xPos += 1.0f; // spacing
+		}
+        
+		[self addSubview:customButton];
     }
 	
     self.contentSize = CGSizeMake(xPos, 41);
