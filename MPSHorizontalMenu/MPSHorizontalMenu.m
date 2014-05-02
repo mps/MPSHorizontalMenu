@@ -81,9 +81,12 @@
 		if (buttonWidth < minWidth) {
 			buttonWidth = minWidth;
 		}
-        
-        MPSHorizontalMenuButton *customButton = [[MPSHorizontalMenuButton alloc] initWithFrame:CGRectMake(xPos, 0, buttonWidth, self.frame.size.height - 1.0f)];
 		
+		CGFloat yPos = self.topBorder ? 1.0f : 0.0f;
+		CGFloat height = self.frame.size.height - 1.0f;
+        
+        MPSHorizontalMenuButton *customButton = [[MPSHorizontalMenuButton alloc] initWithFrame:CGRectMake(xPos, yPos, buttonWidth, height)];
+		customButton.topBorder = self.topBorder;
         [customButton setTitle:title forState:UIControlStateNormal];
         [customButton setTitle:title forState:UIControlStateSelected];
         customButton.titleLabel.font = buttonFont;
@@ -92,10 +95,10 @@
 			[customButton setBackgroundImage:self.selectedImage forState:UIControlStateSelected];
 		} else {
 			[customButton setNormalBackgroundColor:self.itemNormalBackgroundColor];
-			[customButton setNormalBottomBorderColor:self.itemNormalBottomBorderColor];
+			[customButton setNormalBorderColor:self.itemNormalBorderColor];
 			[customButton setNormalForegroundColor:self.itemNormalForegroundColor];
 			[customButton setSelectedBackgroundColor:self.itemSelectedBackgroundColor];
-			[customButton setSelectedBottomBorderColor:self.itemSelectedBottomBorderColor];
+			[customButton setSelectedBorderColor:self.itemSelectedBorderColor];
 			[customButton setSelectedForegroundColor:self.itemSelectedForegroundColor];
 		}
 		

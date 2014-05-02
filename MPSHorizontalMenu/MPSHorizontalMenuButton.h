@@ -10,13 +10,15 @@
 
 @interface MPSHorizontalMenuButton : UIButton
 
-@property (nonatomic, strong) UIView *bottomBorder;
+@property (nonatomic, strong) UIView *customBorder;
+
+@property (nonatomic) BOOL topBorder;
 
 @property (nonatomic) CGFloat defaultHeight;
 
 @property (nonatomic, strong) UIColor *normalBackgroundColor;
 
-@property (nonatomic, strong) UIColor *normalBottomBorderColor;
+@property (nonatomic, strong) UIColor *normalBorderColor;
 
 @property (nonatomic, strong) UIColor *normalForegroundColor;
 
@@ -24,6 +26,6 @@
 
 @property (nonatomic, strong) UIColor *selectedForegroundColor;
 
-@property (nonatomic, strong) UIColor *selectedBottomBorderColor;
+@property (nonatomic, strong) UIColor *selectedBorderColor;
 
 @end

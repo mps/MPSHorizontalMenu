@@ -33,15 +33,25 @@
 - (void)baseInit {
 	self.defaultHeight = self.frame.size.height;
 	
-	if (!self.bottomBorder) {
-		self.bottomBorder = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 3, self.frame.size.width, 3)];
-		self.bottomBorder.backgroundColor = [UIColor clearColor];
-		[self addSubview:self.bottomBorder];
+	if (!self.customBorder) {
+		self.customBorder = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 3, self.frame.size.width, 3)];
+		self.customBorder.backgroundColor = [UIColor clearColor];
+		[self addSubview:self.customBorder];
 	}
 	
 	[self setTitleColor:self.selectedForegroundColor forState:UIControlStateHighlighted];
 	
 	self.selected ? [self setSelectedStyle] : [self setDefaultStyle];
+}
+
+- (void)setTopBorder:(BOOL)topBorder {
+	_topBorder = topBorder;
+	
+	if (self.topBorder) {
+		self.customBorder.frame = CGRectMake(0, 0, self.frame.size.width, 3);
+	} else {
+		self.customBorder.frame = CGRectMake(0, self.frame.size.height - 3, self.frame.size.width, 3);
+	}
 }
 
 - (void)setSelected:(BOOL)selected {
@@ -57,7 +67,7 @@
 - (void)setDefaultStyle {
 	[self setFrameForView:self height:self.defaultHeight];
 	
-	[self setFrameForView:self.bottomBorder height:3.0f];
+	[self setFrameForView:self.customBorder height:3.0f];
 	
 	self.backgroundColor = self.normalBackgroundColor;
 	
@@ -67,13 +77,13 @@
 	
 	[self setTitleColor:self.normalForegroundColor forState:UIControlStateHighlighted];
 	
-	self.bottomBorder.backgroundColor = self.normalBottomBorderColor;
+	self.customBorder.backgroundColor = self.normalBorderColor;
 }
 
 - (void)setSelectedStyle {
 	[self setFrameForView:self height:self.defaultHeight + 1.0f];
 	
-	[self setFrameForView:self.bottomBorder height:4.0f];
+	[self setFrameForView:self.customBorder height:4.0f];
 	
 	self.backgroundColor = self.selectedBackgroundColor;
 	
@@ -81,7 +91,7 @@
 	
 	[self setTitleColor:self.selectedForegroundColor forState:UIControlStateSelected];
 	
-	self.bottomBorder.backgroundColor = self.selectedBottomBorderColor;
+	self.customBorder.backgroundColor = self.selectedBorderColor;
 }
 
 - (void)setFrameForView:(UIView *)view height:(CGFloat)height {
