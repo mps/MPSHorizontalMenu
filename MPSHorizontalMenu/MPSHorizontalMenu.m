@@ -62,6 +62,12 @@
     
     int tag = kButtonBaseTag;
     CGFloat xPos = kLeftOffset;
+	CGFloat minWidth = 106.0f;
+	if (self.itemCount < 2) {
+		minWidth = self.frame.size.width;
+	} else if (self.itemCount < 3) {
+		minWidth = 159.0f;
+	}
 	
     for(int i = 0 ; i < self.itemCount; i ++) {
         NSString *title = [self.dataSource horizontalMenu:self titleForItemAtIndex:i];
@@ -72,8 +78,8 @@
 													 context:nil];
         
         CGFloat buttonWidth = buttonWidthRect.size.width + buttonPadding;
-		if (buttonWidth < 106.0f) {
-			buttonWidth = 106.0f;
+		if (buttonWidth < minWidth) {
+			buttonWidth = minWidth;
 		}
         
         MPSHorizontalMenuButton *customButton = [[MPSHorizontalMenuButton alloc] initWithFrame:CGRectMake(xPos, 0, buttonWidth, self.frame.size.height - 1.0f)];
