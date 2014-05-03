@@ -34,7 +34,7 @@
 
 #pragma mark - MPSHorizontalMenuDataSource
 
-- (int)numberOfItemsForMenu:(MPSHorizontalMenu *)horizontalMenu {
+- (NSInteger)numberOfItemsForMenu:(MPSHorizontalMenu *)horizontalMenu {
     return [self.menuItems count];
 }
 

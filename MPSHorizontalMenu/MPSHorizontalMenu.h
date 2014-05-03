@@ -17,7 +17,7 @@
 
 @required
 
-- (int)numberOfItemsForMenu:(MPSHorizontalMenu *)horizontalMenu;
+- (NSInteger)numberOfItemsForMenu:(MPSHorizontalMenu *)horizontalMenu;
 
 - (NSString *)horizontalMenu:(MPSHorizontalMenu*)horizontalMenu titleForItemAtIndex:(NSUInteger)index;
 
@@ -39,7 +39,7 @@
 @property (nonatomic, weak) IBOutlet id <MPSHorizontalMenuDelegate> itemSelectedDelegate;
 @property (nonatomic, weak) IBOutlet id <MPSHorizontalMenuDataSource> dataSource;
 @property (nonatomic, strong) UIImage *selectedImage;
-@property (nonatomic, assign) int itemCount;
+@property (nonatomic, assign) NSInteger itemCount;
 @property (nonatomic, strong) UIColor *itemNormalBackgroundColor;
 @property (nonatomic, strong) UIColor *itemNormalBorderColor;
 @property (nonatomic, strong) UIColor *itemNormalForegroundColor;
