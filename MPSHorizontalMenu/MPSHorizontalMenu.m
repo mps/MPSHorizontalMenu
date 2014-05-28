@@ -61,12 +61,15 @@
     int buttonPadding = 20;
     
     int tag = kButtonBaseTag;
+	
     CGFloat xPos = kLeftOffset;
-	CGFloat minWidth = 106.0f;
+	
+	CGFloat minWidth = self.frame.size.width / 3;
+	
 	if (self.itemCount < 2) {
 		minWidth = self.frame.size.width;
 	} else if (self.itemCount < 3) {
-		minWidth = 159.0f;
+		minWidth = self.frame.size.width / 2;
 	}
 	
     for(int i = 0 ; i < self.itemCount; i ++) {
