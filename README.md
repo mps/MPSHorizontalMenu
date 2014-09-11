@@ -36,12 +36,12 @@ For more an example, check out the example project included in this repository a
 self.menuItems = [@[ @"Menu Item 1", @"Menu Item 2", @"Menu Item 3", @"Menu Item 4", @"Menu Item 5"] mutableCopy];
 
 self.horizontalMenu = [[MPSHorizontalMenu alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, 41)];
-	self.horizontalMenu.itemSelectedBackgroundColor = [UIColor blueColor];
-	self.horizontalMenu.dataSource = self;
-	self.horizontalMenu.itemSelectedDelegate = self;
-	self.horizontalMenu.scrollsToTop = NO;
-	[self.horizontalMenu reloadData];
-	[self.horizontalMenu setSelectedIndex:0 animated:NO];
+self.horizontalMenu.itemSelectedBackgroundColor = [UIColor blueColor];
+self.horizontalMenu.dataSource = self;
+self.horizontalMenu.itemSelectedDelegate = self;
+self.horizontalMenu.scrollsToTop = NO;
+[self.horizontalMenu reloadData];
+[self.horizontalMenu setSelectedIndex:0 animated:NO];
 	
 // Then implement the data source and delegate methods.
 
